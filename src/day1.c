@@ -18,14 +18,15 @@ void read_file_formatted(const char *filename, int *lh, int *rh) {
         i++;
     }
 
-    fclose(file);
+    if (fclose(file) != 0) {
+        perror("Error closing file");
+    }
 }
 
 int compare(const void *a, const void *b) {
     return (*(int *)a - *(int *)b); // Ascending order
 }
 
-// int main(int argc, char **argv)
 int main()
 {
     int lh_list[INPUT_SIZE];
@@ -43,9 +44,9 @@ int main()
     }
     printf("ans1: %d\n", ans1);
 
-    int ans2 = 0, ii;
+    int ans2 = 0;
     for (i = 0; i<INPUT_SIZE;i++ ) {
-        for (ii = 0; ii<INPUT_SIZE;ii++ ) {
+        for (int ii = 0; ii<INPUT_SIZE;ii++ ) {
             if (lh_list[i]==rh_list[ii]) {
                 ans2 += lh_list[i];
             }
