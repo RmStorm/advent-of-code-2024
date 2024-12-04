@@ -7,6 +7,6 @@
 
 // Function declarations
 void print_array(int *array, int size);
-char *read_file_to_buffer(const char *filename);
+char *read_file_to_buffer(const char *filename, long *out_length);
 
 #endif // UTILS_H

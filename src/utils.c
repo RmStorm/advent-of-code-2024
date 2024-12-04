@@ -12,7 +12,7 @@ void print_array(int *array, int size) {
   printf("]\n");
 }
 
-char *read_file_to_buffer(const char *filename) {
+char *read_file_to_buffer(const char *filename, long *out_length) {
   FILE *file = fopen(filename, "r");
   if (!file) {
     perror("Failed to open file");
@@ -37,5 +37,9 @@ char *read_file_to_buffer(const char *filename) {
   buffer[filesize] = '\0'; // Null-terminate the buffer
 
   fclose(file);
+  // Set output parameter
+  if (out_length) {
+    *out_length = filesize;
+  }
   return buffer;
 }

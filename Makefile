@@ -15,5 +15,8 @@ day2: src/day2.c src/utils.c
 day3: src/day3.c src/utils.c
 	$(CC) $(CFLAGS) -o build/$@ $^ -lpcre
 
+day4: src/day4.c src/utils.c
+	$(CC) $(CFLAGS) -o build/$@ $^
+
 clean:
 	rm -rf build/*

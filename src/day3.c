@@ -71,7 +71,7 @@ int compare(const void *a, const void *b) {
 }
 
 int main() {
-  char *content = read_file_to_buffer("data/day3.txt");
+  char *content = read_file_to_buffer("data/day3.txt", NULL);
   if (content) {
     const char *pattern = "(mul\\((\\d+),(\\d+)\\)|don't\\(\\)|do\\(\\))";
     match_all(pattern, content);
