@@ -16,7 +16,7 @@ const int ds[XMAS_DIRECTIONS][6] = {
     {-1, -2, -3, 1, 2, 3}, {-1, -2, -3, 0, 0, 0}, {-1, -2, -3, -1, -2, -3},
     {0, 0, 0, -1, -2, -3}, {1, 2, 3, -1, -2, -3}};
 
-#define X_MAS_DIRECTIONS 8
+#define X_MAS_DIRECTIONS 4
 
 const int xs[X_MAS_DIRECTIONS][8] = {
     {-1, 1, -1, -1, 1, -1, 1, 1},
