@@ -17,7 +17,7 @@ typedef struct {
   int ans1;
 } trails;
 
-void store_in_trails(trails *t, int x, int y) {
+void store_in_patch(trails *t, int x, int y) {
   if (t->ans1 == 1) {
     for (int i = 0; i < t->len; i++) {
       if (t->found[i][0] == x && t->found[i][1] == y)
@@ -49,7 +49,7 @@ void traverse(char *input, int rows, int cols, int x, int y, int g, trails *t) {
     int new_x = x + DIRS[dir][0], new_y = y + DIRS[dir][1];
     if (get_char(input, rows, cols, new_x, new_y) - '0' == g) {
       if (g == 9)
-        store_in_trails(t, new_x, new_y);
+        store_in_patch(t, new_x, new_y);
       else if (g < 9)
         traverse(input, rows, cols, new_x, new_y, g + 1, t);
     }

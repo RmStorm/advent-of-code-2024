@@ -21,6 +21,7 @@ void set_char(char *input, int rows, int cols, int x, int y, char c) {
   }
   input[y * (cols + 1) + x] = c;
 }
+
 void set_visited(char *input, int rows, int cols, uint8_t (*visited)[rows],
                  int x, int y) {
   if (get_char(input, rows, cols, x, y) == '\0')
